@@ -1,0 +1,86 @@
+@import "tailwindcss";
+@import "./theme.css";
+
+
+
+/* h1 */
+.contenedor__titulo {
+  font-family: var(--heading-h1-font-family);
+  font-size: var(--heading-h1-font-size);
+  font-style: var(--heading-h1-font-style);
+  font-weight: var(--heading-h1-font-weight);
+  letter-spacing: var(--heading-h1-letter-spacing);
+  line-height: var(--heading-h1-line-height);
+  color: var(--color-primary);
+}
+
+/* h2 */
+.contenedor__subtitulo {
+  font-family: var(--heading-h2-font-family);
+  font-size: var(--heading-h2-font-size);
+  font-style: var(--heading-h2-font-style);
+  font-weight: var(--heading-h2-font-weight);
+  letter-spacing: var(--heading-h2-letter-spacing);
+  line-height: var(--heading-h2-line-height);
+  color: var(--color-secondary);
+}
+
+/* Texto largo */
+.contenedor__texto-largo {
+  font-family: var(--text-large-font-family);
+  font-size: var(--text-large-font-size);
+  font-style: var(--text-large-font-style);
+  font-weight: var(--text-large-font-weight);
+  letter-spacing: var(--text-large-letter-spacing);
+  line-height: var(--text-large-line-height);
+  color: var(--color-text);
+  
+}
+
+/* Texto para descripcón y tipo */
+.contenedor__texto-normal {
+  font-size: var(--text-normal-font-size);
+  color: var(--color-grey-2);
+  white-space: normal;
+}
+
+/* Color para precio */
+.contenedor__precio {
+  font-family: var(--text-medium-bold-font-family);
+  font-size: var(--text-medium-bold-font-size);
+  font-style: var(--text-medium-bold-font-style);
+  font-weight: var(--text-medium-bold-font-weight);
+  letter-spacing: var(--text-medium-bold-letter-spacing);
+  line-height: var(--text-medium-bold-line-height);
+  color: var(--color-success);
+}
+
+
+/* Tarjeta con imagen */
+.contenedor__tarjeta {
+  background-color: var(--color-white);
+  border-radius: 10px;
+  box-shadow: 3px 3px 3px 3px rgba(0, 0, 0, 0.3);
+  padding: 12px;
+  width: 100%;
+  max-width: 180px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 8px
+}
+
+
+/* Responsividad tarjeta */
+@media (min-width: 640px) {
+  .contenedor__tarjeta {
+    max-width: 200px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .contenedor__tarjeta {
+    max-width: 240px;
+  }
+}
