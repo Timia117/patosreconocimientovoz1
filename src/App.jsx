@@ -1,35 +1,33 @@
-"use strict";
-import GlobalContent from "./GlobalContent.jsx";
-import TarjetaPato from "./TarjetaPato.jsx";
-
-import "./data/ducklyn.js";
-import ducklyn from "./data/ducklyn.js";
-
+import Patos from "./pages/Patos.jsx";
+import Header from "./components/Header.jsx";
+import Home from "./pages/Home.jsx";
+import {Routes , Route} from "react-router-dom";
+import ContenidoPrincipal from "./pages/ContenidoPrincipal.jsx"; 
+import DetallesPato from "./pages/DetallesPato.jsx";
+import Footer from "./components/Footer.jsx";
 /**
  * Componente principal de la aplicación
  */
 function App() {
   return (
     <>
-      <GlobalContent>
-        <h1 className="contenedor__titulo">Nuestros Patos</h1>
-        <h2 className="contenedor__texto-largo">
-          Coloridos, divertidos y coleccionables
-        </h2>
-        {ducklyn.flat().map((pato, index) => {
-          console.log(pato);
-          return (
-            <TarjetaPato
-              key={index}
-              nombre={pato.nombre}
-              foto={pato.imagen}
-              descripcion={pato.descripcion}
-              categoria={pato.categoria}
-              precio={pato.precio}
-            ></TarjetaPato>
-          );
-        })}
-      </GlobalContent>
+      <Header />
+      <Routes>
+        <Route path="/" element={<ContenidoPrincipal />}>
+          <Route index element={<Home />} />
+          <Route path="inicio" element={<Home />} />
+          <Route path="patos" element={<Patos />} />
+          <Route path="patos/:id" element={<DetallesPato />} />
+          <Route
+            path="*"
+//            titulo="Contenido no encontrado"
+            element={<p>La página que buscas no existe</p>}
+          />
+        </Route>
+      </Routes>
+      
+      <Footer />
+
     </>
   );
 }

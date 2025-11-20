@@ -1,17 +1,16 @@
-"use strict";
+
 /**
  * TarjetaPato: Componente que representa una tarjeta individual de pato 
  *  
  */
-function TarjetaPato(props) {
-  const { nombre, foto, descripcion, categoria, precio } = props;
+function TarjetaPato({nombre, foto, descripcion, categoria, precio, children}) {
   return (
     <>
       {/* Navegacion con tabulador (tabIndex) y por si el user hace mucho zoom, para que se adapte (className:...)*/}
       <article
         tabIndex="0"
         aria-label={`${nombre}`}
-        className="w-full max-w-xs sm:max-w-sm md:max-w-md flex flex-col items-start gap-2 p-3 rounded-md bg-white shadow-md"
+        className="flex flex-col justify-between w-full h-full p-3 rounded-md bg-white shadow-md"
       >
         <figure className="w-full aspect-square rounded-lg bg-gray-100 overflow-hidden">
           <img
@@ -21,7 +20,7 @@ function TarjetaPato(props) {
             className="w-full h-auto object-cover"
           />
           {/* Texto alternativo para lectores de pantalla */}
-          <figcaption className="sr-only">{props.children}</figcaption>
+          <figcaption className="sr-only">{children}</figcaption>
         </figure>
 
         <section>

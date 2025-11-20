@@ -71,6 +71,16 @@
   gap: 8px
 }
 
+/* Estilo para Header y Footer */
+.contenedor__barra-principal {
+  background-color: var(--color-secondary); /* amarillo */
+  color: var(--color-black); /* o el que prefieras */
+  padding: 16px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  
+}
+
 
 /* Responsividad tarjeta */
 @media (min-width: 640px) {
