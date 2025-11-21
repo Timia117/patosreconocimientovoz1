@@ -20,7 +20,7 @@ function App() {
           <Route path="patos/:id" element={<DetallesPato />} />
           <Route
             path="*"
-//            titulo="Contenido no encontrado"
+            titulo="Contenido no encontrado"
             element={<p>La página que buscas no existe</p>}
           />
         </Route>

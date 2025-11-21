@@ -18,7 +18,7 @@
 
 ## Vista en diferentes pantallas
 
-![Vista en móvil](image-4.png)
+![Vista en móvil](image-4.png) (CAMBIAR)
 
 ![Vista en otro dispositivo](image-5.png)
 
