@@ -1,6 +1,6 @@
 function SearchBar({ searchTerm, onSearchChange, placeholder = "Buscar..." }) {
   return (
-    <div className="mb-8 w-full max-w-lg mx-auto">
+    <section className="mb-8 w-full max-w-lg mx-auto">
       <label htmlFor="search-input" className="sr-only">
         {placeholder}
       </label>
@@ -16,7 +16,7 @@ function SearchBar({ searchTerm, onSearchChange, placeholder = "Buscar..." }) {
                     duration-150 ease-in-out"
         aria-label={placeholder}
       />
-    </div>
+    </section>
   );
 }
 export default SearchBar;

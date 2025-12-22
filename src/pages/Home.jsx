@@ -1,17 +1,14 @@
 import { Link } from "react-router-dom";
-import ContenedorGlobal from "../components/ContenedorGlobal";
-import TarjetaPato from "../components/TarjetaPato";
+import MainContent from "../components/MainContent";
+import CardDuck from "../components/CardDuck";
 import ducklyn from "../data/ducklyn";
 import Slogan from "../assets/images/Slogan.png";
 
-/**
- * Página principal de la aplicación.
- * @returns Devuelve el componente <ContenedorGlobal> con el título "Nuestros Patos"
- */
+
 function Home() {
   return (
-    <ContenedorGlobal titulo="Nuestros Patos">
-      {/* Banner solo visible en pantallas >= sm */}
+    <>
+      {/* Solo visible en pantallas >= sm */}
       <section className="hidden sm:relative sm:flex sm:justify-center sm:mb-8">
         <img
           src={Slogan}
@@ -54,11 +51,11 @@ function Home() {
             to={`/patos/${pato.id}`}
             aria-label={`Ver detalles de ${pato.nombre}`}
           >
-            <TarjetaPato nombre={pato.nombre} foto={pato.imagen} />
+            <CardDuck nombre={pato.nombre} foto={pato.imagen} />
           </Link>
         ))}
       </section>
-    </ContenedorGlobal>
+    </>
   );
 }
 

@@ -27,12 +27,16 @@ function Nav() {
           <li>
             <NavLink to="/patos" onClick={() => setIsOpen(false)}>Catálogo</NavLink>
           </li>
+          <li>
+            <NavLink to="/administration" onClick={() => setIsOpen(false)}>Admin</NavLink>
+          </li>
         </ul>
       )}
 
       <ul className="hidden md:flex gap-4">
         <li><NavLink to="/">Inicio</NavLink></li>
         <li><NavLink to="/patos">Catálogo</NavLink></li>
+        <li><NavLink to="/administracion">Admin</NavLink></li>
       </ul>
     </nav>
   );

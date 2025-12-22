@@ -1,7 +1,7 @@
 import { useParams, useNavigate } from "react-router-dom";
 import ducklyns from "../data/ducklyn";
 
-function DetallesPato() {
+function DuckDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
   const pato = ducklyns.find((p) => p.id === parseInt(id));
@@ -47,4 +47,4 @@ function DetallesPato() {
     </article>
   );
 }
-export default DetallesPato;
+export default DuckDetails;

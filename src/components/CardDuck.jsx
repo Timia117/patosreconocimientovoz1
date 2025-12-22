@@ -1,4 +1,4 @@
-function TarjetaPato({ nombre, foto, descripcion, precio, children }) {
+function CardDuck({ nombre, foto, descripcion, precio, children }) {
   return (
     <article
       tabIndex={0}
@@ -27,4 +27,4 @@ function TarjetaPato({ nombre, foto, descripcion, precio, children }) {
     </article>
   );
 }
-export default TarjetaPato;
+export default CardDuck;
