@@ -12,7 +12,7 @@ function SearchBar({ searchTerm, onSearchChange, placeholder = "Buscar..." }) {
         // Llama a la función proporcionada por el padre en cada cambio
         onChange={(e) => onSearchChange(e.target.value)}
         className="w-full p-3 border-2 border-gray-300 rounded-lg shadow-inner
-                    focus:outline-none focus:ring-2 focus:ring-yellow-500 focus:border-yellow-500 transition
+                    focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:border-yellow-400 transition
                     duration-150 ease-in-out"
         aria-label={placeholder}
       />

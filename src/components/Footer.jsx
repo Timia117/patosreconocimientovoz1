@@ -1,9 +1,5 @@
-import logo from "../assets/images/Pato.png";
 
-/**
- * Pie de página de la aplicación
- * @returns <footer> semántico con contenido simplificado
- */
+
 function Footer() {
   return (
     <footer className="contenedor__barra-principal">
@@ -29,14 +25,6 @@ function Footer() {
           <p>Página</p>
           <p>Página</p>
           
-          {/* <figure className="flex flex-col items-end mt-2">
-            <img
-              src={logo}
-              alt="Logo de Ducklyn"
-              className="w-16 h-16 object-contain"
-            />
-            <figcaption className="sr-only">Ducklyn</figcaption>
-          </figure> */}
         </section>
       </section>
     </footer>
