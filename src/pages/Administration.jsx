@@ -6,4 +6,5 @@ function Administration() {
     </>
   );
 }
+
 export default Administration;
