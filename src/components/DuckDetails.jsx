@@ -64,6 +64,7 @@ function DuckDetails() {
     );
   }
 
+  
   if (!pato) {
     return <p>Pato no encontrado</p>;
   }
