@@ -1,3 +1,7 @@
+dist-electron/
+*.exe
+
+
 # Logs
 logs
 *.log
