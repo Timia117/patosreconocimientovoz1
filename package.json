@@ -4,11 +4,9 @@
   "version": "1.0.0",
   "main": "main.cjs",
   "scripts": {
-    "start": "electron .",
     "dev": "vite",
-    "build": "vite build",               
-    "build:electron": "electron-builder", 
-    "electron-dev": "cross-env ELECTRON_START_URL=http://localhost:5173 electron ."
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "build": {
     "appId": "patos.conectados.app",
@@ -17,7 +15,7 @@
       "output": "dist-electron"
     },
     "files": [
-      "dist/**/*",        
+      "dist/**/*",
       "main.cjs",
       "package.json"
     ],
@@ -29,6 +27,7 @@
     "@fontsource/baloo-2": "^5.2.7",
     "@tailwindcss/vite": "^4.1.16",
     "axios": "^1.13.2",
+    "lucide-react": "^0.563.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
     "react-router-dom": "^7.9.6"
@@ -36,10 +35,6 @@
   "devDependencies": {
     "@vitejs/plugin-react": "^5.0.4",
     "autoprefixer": "^10.4.23",
-    "concurrently": "^9.2.1",
-    "cross-env": "^10.1.0",
-    "electron": "^26.6.10",
-    "electron-builder": "^26.4.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^4.1.18",
     "vite": "^7.1.7"

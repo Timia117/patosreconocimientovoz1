@@ -5,7 +5,6 @@ export const UserContext = createContext();
 export const UserProvider = ({ children }) => {
   const [userLogged, setUserLogged] = useState(false);
 
-  // Al montar, comprobamos si hay usuario logueado en localStorage
   useEffect(() => {
     const stored = localStorage.getItem("userLogged");
     if (stored === "true") {
@@ -13,13 +12,11 @@ export const UserProvider = ({ children }) => {
     }
   }, []);
 
-  // Función para hacer login (simulado)
   const login = () => {
     setUserLogged(true);
     localStorage.setItem("userLogged", "true");
   };
 
-  // Función para hacer logout
   const logout = () => {
     setUserLogged(false);
     localStorage.removeItem("userLogged");
@@ -31,4 +28,3 @@ export const UserProvider = ({ children }) => {
     </UserContext.Provider>
   );
 };
-export { UserContext };
