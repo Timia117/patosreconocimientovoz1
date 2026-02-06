@@ -83,7 +83,7 @@ function Ducks() {
               : "Desliza → para buscar por voz"}
           </p>
         )}
-        <section className="relativa">
+        <section className="relative">
           <SearchBar
             searchTerm={searchTerm}
             onSearchChange={setSearchTerm}
