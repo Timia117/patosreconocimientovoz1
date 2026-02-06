@@ -5,11 +5,19 @@ https://apiproductos-vix4.onrender.com/productos
 
 
 ## Vercel
+<<<<<<< HEAD
 https://patosreconocimientovoz1.vercel.app/
 
 
 ## Repositorio del Proyecto
 https://github.com/Timia117/patosreconocimientovoz1
+=======
+https://patosreconocimientovoz.vercel.app/
+
+
+## Repositorio del Proyecto
+https://github.com/InterfacesVanesaSekeresh/patosreconocimientovoz
+>>>>>>> 29f46109d1626a71295001e9033dee898b874795
 
 
 (API con patos de ejemplo): https://github.com/InterfacesVanesaSekeresh/ApiProductos
