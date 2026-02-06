@@ -72,6 +72,7 @@ function Ducks() {
         onTouchStart={handleTouchStart} // Para detectar el inicio del toque
         onTouchEnd={handleTouchEnd} // Para detectar el final del toque
       >
+        
         {/* Se muestra si es móvil y el reconocimiento de voz lo soporta */}
         { isMobile && voice.isSupported && (
           <p className="text-base font-medium mb-2" style={{ color: "#0A1A2F" }}>
