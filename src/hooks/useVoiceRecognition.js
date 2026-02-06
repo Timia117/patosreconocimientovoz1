@@ -44,8 +44,8 @@ const useVoiceRecognition = (onResult) => {
 
     // Crear el reconocimiento de voz y configurarlo
     const recognition = new SpeechRecognition();
-    recognition.lang = "es-ES";          // Idioma
-    recognition.continuous = false;      // Escucha una frase
+    recognition.lang = navigator.language || "es-ES"; // El idioma
+    recognition.continuous = false;  // Escucha una frase
     recognition.interimResults = false;  // Solo resultados finales (Hasta callarse)
 
     // Detecta voz y la convierte a texto
