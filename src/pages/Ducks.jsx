@@ -72,19 +72,23 @@ function Ducks() {
         onTouchStart={handleTouchStart} // Para detectar el inicio del toque
         onTouchEnd={handleTouchEnd} // Para detectar el final del toque
       >
+        {/* Se muestra si es móvil y el reconocimiento de voz lo soporta */}
+        {isMobile && voice.isSupported && (
+          <p className="contenedor__texto-largo">
+            {/* Si está escuchando, muestra "Escuchando...", si no, 
+            muestra el mensaje de deslizar 
+            */}
+            {voice.isListening 
+              ? "Escuchando..."
+              : "Desliza → para buscar por voz"}
+          </p>
+        )}
         <SearchBar
           searchTerm={searchTerm}
           onSearchChange={setSearchTerm}
           placeholder="Buscar patos por nombre..."
           className={!isMobile ? "pr-12" : ""}
         />
-        {/* Si está en móvil, el reconocimiento de voz lo soporta y se muestra el mensaje de deslizar */}
-        {isMobile && voice.isSupported && showSwipeHint && (
-          <p className="contenedor__texto-largo">
-            Desliza → para buscar por voz
-          </p>
-        )}
-
         {/* Si no está en móvil y el reconocimiento de voz lo soporta, mostramos el botón */}
         {!isMobile && voice.isSupported && (
           <button
