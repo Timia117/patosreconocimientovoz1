@@ -74,7 +74,7 @@ function Ducks() {
       >
         {/* Se muestra si es móvil y el reconocimiento de voz lo soporta */}
         { isMobile && voice.isSupported && (
-          <p className="text-blue-900 text-base font-medium mb-2">
+          <p className="text-base font-medium mb-2" style={{ color: "#0A1A2F" }}>
             {/* Si está escuchando, muestra "Escuchando...", si no, 
             muestra el mensaje de deslizar 
             */}
