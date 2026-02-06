@@ -78,34 +78,35 @@ function Ducks() {
             {/* Si está escuchando, muestra "Escuchando...", si no, 
             muestra el mensaje de deslizar 
             */}
-            {voice.isListening 
+            {voice.isListening
               ? "Escuchando..."
               : "Desliza → para buscar por voz"}
           </p>
         )}
-        <SearchBar
-          searchTerm={searchTerm}
-          onSearchChange={setSearchTerm}
-          placeholder="Buscar patos por nombre..."
-          className={!isMobile ? "pr-12" : ""}
-        />
-        {/* Si no está en móvil y el reconocimiento de voz lo soporta, mostramos el botón */}
-        {!isMobile && voice.isSupported && (
-          <button
-            onClick={voice.startListening}
-            className={`absolute right-4 top-4
+        <section className="relativa">
+          <SearchBar
+            searchTerm={searchTerm}
+            onSearchChange={setSearchTerm}
+            placeholder="Buscar patos por nombre..."
+            className={!isMobile ? "pr-12" : ""}
+          />
+          {/* Si no está en móvil y el reconocimiento de voz lo soporta, mostramos el botón */}
+          {!isMobile && voice.isSupported && (
+            <button
+              onClick={voice.startListening}
+              className={`absolute right-4 top-4
               ${
                 voice.isListening
                   ? "text-red-500 animate-pulse"
                   : "text-gray-400 hover:text-blue-600"
               }`}
-            title="Buscar por voz"
-          >
-            <Mic size={20} />
-          </button>
-        )}
+              title="Buscar por voz"
+            >
+              <Mic size={20} />
+            </button>
+          )}
+        </section>
       </section>
-
       <section>
         {loading && (
           <section className="flex justify-center items-center h-64 mt-8">
