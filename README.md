@@ -9,7 +9,7 @@ https://patosreconocimientovoz1.vercel.app/
 
 
 ## Repositorio del Proyecto
-https://github.com/InterfacesVanesaSekeresh/patosreconocimientovoz
+https://github.com/Timia117/patosreconocimientovoz1
 
 
 (API con patos de ejemplo): https://github.com/InterfacesVanesaSekeresh/ApiProductos
