@@ -82,6 +82,7 @@ const useVoiceRecognition = (onResult) => {
       recognitionRef.current.start(); 
     } catch {
       console.warn("Ya está escuchando...");
+      setIsListening(true); // fuerza el estado, para que salga lo de escuchando
     }
   };
 
