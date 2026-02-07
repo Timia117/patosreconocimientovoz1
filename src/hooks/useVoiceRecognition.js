@@ -24,7 +24,6 @@ import { useState, useEffect, useRef } from "react";
  * Speech-to-Text externos (Whisper, Azure, Google Speech, etc.).
  */
 const useVoiceRecognition = (onResult) => {
-
   // Ver si el navegador soparta el reconocimiento de voz
   const SpeechRecognition =
     window.SpeechRecognition || window.webkitSpeechRecognition;
@@ -45,30 +44,31 @@ const useVoiceRecognition = (onResult) => {
     // Crear el reconocimiento de voz y configurarlo
     const recognition = new SpeechRecognition();
     recognition.lang = navigator.language || "es-ES"; // El idioma
-    recognition.continuous = false;  // Escucha una frase
-    recognition.interimResults = false;  // Solo resultados finales (Hasta callarse)
+    recognition.continuous = false; // Escucha una frase
+    recognition.interimResults = false; // Solo resultados finales (Hasta callarse)
 
     // Detecta voz y la convierte a texto
     recognition.onresult = (event) => {
       const text = event.results[0][0].transcript; // Se traduce a texto la voz detectada
-      onResult(text);                              // Le pasa el texto ya reconocido a la función
-      setIsListening(false);                       // Dejamos de escuchar
+      onResult(text); // Le pasa el texto ya reconocido a la función
+      setIsListening(false); // Dejamos de escuchar
     };
 
     // Por si hay algún error
     recognition.onerror = (event) => {
-      // Se muestra por consola el error  
+      // Se muestra por consola el error
       console.error("Error en reconocimiento:", event.error);
       // Deja de escuchar
       setIsListening(false);
     };
 
     // Cuando termina de escuchar
-    recognition.onend = () => setIsListening(false);
+    recognition.onend = () => {
+      setTimeout(() => setIsListening(false), 300); // Pequeño retraso para evitar que se quede atascado en "escuchando" 
+    };
 
     // Guardamos el reconocimiento en el ref
     recognitionRef.current = recognition;
-
   }, [SpeechRecognition, onResult, isSupported]);
 
   // Función para empezar a escuchar
@@ -77,20 +77,20 @@ const useVoiceRecognition = (onResult) => {
     if (!isSupported || !recognitionRef.current) return;
 
     try {
-      // Empezamos a escuchar  
+      // Empezamos a escuchar
       setIsListening(true);
-      recognitionRef.current.start(); 
+      recognitionRef.current.start();
     } catch {
       console.warn("Ya está escuchando...");
-      setIsListening(true); // fuerza el estado, para que salga lo de escuchando
+      setIsListening(true); // fuerza el estado, para que salga lo de "escuchando"
     }
   };
 
   // Devolvemos el estado y la función para empezar a escuchar
   return {
-    isSupported,     // Si el navegador lo soporta 
-    isListening,     // Si está escuchando 
-    startListening: isSupported ? startListening : () => {} // Función para empezar a escuchar (si no la soporta, es una función vacía)
+    isSupported, // Si el navegador lo soporta
+    isListening, // Si está escuchando
+    startListening: isSupported ? startListening : () => {}, // Función para empezar a escuchar (si no la soporta, es una función vacía)
   };
 };
 
