@@ -72,10 +72,11 @@ function Ducks() {
         onTouchStart={handleTouchStart} // Para detectar el inicio del toque
         onTouchEnd={handleTouchEnd} // Para detectar el final del toque
       >
-        
         {/* Se muestra si es móvil y el reconocimiento de voz lo soporta */}
-        { isMobile && voice.isSupported && (
-<p className="text-red-500 text-sm mb-2 !text-red-500">
+        {isMobile && voice.isSupported && (
+          <p className="text-gray-700 text-sm mb-2 !text-gray-700">
+            {" "}
+            {/*Forzar a que se ponga el color*/}
             {/* Si está escuchando, muestra "Escuchando...", si no, 
             muestra el mensaje de deslizar 
             */}
